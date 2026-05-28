@@ -33,7 +33,7 @@ Password:
 
 🚀 Live Demo
 
-https://codealpha-ecommerce-1-oclq.onrender.com .....(live deploy link)
+https://codealpha-ecommerce-2-mo64.onrender.com .....(live deploy link)
 
 📂 Project Structure
 
