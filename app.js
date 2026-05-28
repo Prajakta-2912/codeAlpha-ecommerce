@@ -350,6 +350,3 @@ res.render("product",{product});
 app.get("/payment",(req,res)=>{
 res.render("payment");
 });
-app.get("/cart",(req,res)=>{
-res.render("cart");
-});
