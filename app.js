@@ -9,11 +9,16 @@ app.use(express.static("public"));
 
 app.use(express.urlencoded({extended:true}));
 
+
 app.use(session({
 secret:"secret",
 resave:false,
-saveUninitialized:true
+saveUninitialized:false,
+cookie:{
+    secure: false
+}
 }));
+const PORT = process.env.PORT || 3000;
 
 const product = [
 
@@ -81,16 +86,17 @@ app.post("/login",(req,res)=>{
 
 const email = req.body.email;
 const password = req.body.password;
+console.log(req.body);
 
 if(
 email === "admin@gmail.com"
 &&
-password === "1234"
+password === "123456"
 ){
 
 req.session.user = email;
 
-res.redirect("/dashboard");
+ return res.redirect("/dashboard");
 
 }else{
 
@@ -346,7 +352,4 @@ res.render("payment");
 });
 app.get("/cart",(req,res)=>{
 res.render("cart");
-});
-app.get("/login",(req,res)=>{
-res.render("login");
 });

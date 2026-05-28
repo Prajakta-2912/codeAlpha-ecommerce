@@ -21,19 +21,27 @@
 Login to your ecommerce dashboard
 </p>
 
+<form action="/login" method="POST">
+
 <input 
-type="email" 
+type="email"
+name="email"
 placeholder="Enter Email"
+required
 >
 
 <input 
-type="password" 
+type="password"
+name="password"
 placeholder="Enter Password"
+required
 >
 
-<button onclick="loginUser()">
+<button type="submit">
 Login
 </button>
+
+</form>
 
 <p class="login-extra">
 Demo:
@@ -43,16 +51,6 @@ admin@gmail.com / 1234
 </div>
 
 </div>
-
-<script>
-
-function loginUser(){
-
-window.location.href="/dashboard";
-
-}
-
-</script>
 
 </body>
 
