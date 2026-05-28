@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-main">
+
+<h1>🛒 Shopping Cart</h1>
+
+<div class="cart-container">
+
+<div class="cart-card">
+    <button onclick="removeCart()">
+        remove
+    </button>
+
+<img id="cartImage">
+
+<div>
+
+<h2 id="cartName"></h2>
+
+<p id="cartPrice"></p>
+
+<p>Quantity: 1</p>
+
+</div>
+
+</div>
+
+<div class="cart-total">
+
+<h2 id="totalPrice"></h2>
+
+<button onclick="goPayment()">
+Proceed To Payment
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let cart =
+JSON.parse(localStorage.getItem("cartProduct"));
+
+if(!cart){
+
+document.querySelector(".cart-container").innerHTML = `
+
+<h1 style="text-align:center;">
+🛒 Cart Is Empty
+</h1>
+
+`;
+
+}
+
+if(cart){
+
+document.getElementById("cartImage").src =
+cart.image;
+
+document.getElementById("cartName").innerText =
+cart.name;
+
+document.getElementById("cartPrice").innerText =
+cart.price;
+
+document.getElementById("totalPrice").innerText =
+"Total: " + cart.price;
+
+}
+
+function goPayment(){
+
+window.location.href="/payment";
+
+}
+function removeCart(){
+
+localStorage.removeItem("cartProduct");
+
+location.reload();
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Dashboard</title>
+
+<link rel="stylesheet"
+href="/css/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2 class="admin-logo">
+
+Admin Panel
+
+</h2>
+
+<ul>
+
+<li class="active">
+
+<a href="/dashboard">
+
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="/orders">
+
+<i class="fa-solid fa-cart-shopping"></i>
+Orders
+
+</a>
+
+</li>
+
+<li>
+
+<a href="/revenue">
+
+<i class="fa-solid fa-dollar-sign"></i>
+Revenue
+
+</a>
+
+</li>
+
+<li>
+
+<a href="/users">
+
+<i class="fa-solid fa-users"></i>
+Users
+
+</a>
+
+</li>
+
+<li>
+
+<a href="/products">
+
+<i class="fa-solid fa-box"></i>
+Products
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="dashboard-main">
+
+<div class="topbar">
+
+<h1>
+
+Welcome Admin 👋
+
+</h1>
+
+<button id="darkBtn">
+
+🌙 Dark Mode
+
+</button>
+
+</div>
+
+<!-- DASHBOARD CARDS -->
+
+<div class="cards">
+
+<div class="dashboard-card">
+
+<h3>Total Revenue</h3>
+
+<h1>₹2,50,000</h1>
+
+<p>+20% This Month</p>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>Total Orders</h3>
+
+<h1>420</h1>
+
+<p>+15 New Orders</p>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>Total Users</h3>
+
+<h1>180</h1>
+
+<p>+12 New Users</p>
+
+</div>
+
+<div class="dashboard-card">
+
+<h3>Total Products</h3>
+
+<h1><%= products.length %></h1>
+
+<p>Live Inventory</p>
+
+</div>
+
+</div>
+
+<!-- CHART -->
+
+<div class="chart-container">
+
+<h2>
+
+📈 Revenue Analytics
+
+</h2>
+
+<div class="analytics-cards">
+
+<div class="mini-card">
+
+<h3>Today's Sales</h3>
+
+<h1>₹25,000</h1>
+
+</div>
+
+<div class="mini-card">
+
+<h3>Weekly Revenue</h3>
+
+<h1>₹1,20,000</h1>
+
+</div>
+
+<div class="mini-card">
+
+<h3>Monthly Revenue</h3>
+
+<h1>₹2,50,000</h1>
+
+</div>
+
+</div>
+
+<div class="graph-box">
+
+<canvas id="revenueChart"></canvas>
+
+</div>
+
+</div>
+<!-- RECENT ORDERS -->
+
+<div class="recent-orders">
+
+<h2>
+
+Recent Orders
+
+</h2>
+
+<table>
+
+<tr>
+
+<th>Order ID</th>
+<th>Customer</th>
+<th>Status</th>
+<th>Amount</th>
+
+</tr>
+
+<tr>
+
+<td>#1001</td>
+<td>Rahul</td>
+<td class="success">Completed</td>
+<td>₹5000</td>
+
+</tr>
+
+<tr>
+
+<td>#1002</td>
+<td>Priya</td>
+<td class="pending">Pending</td>
+<td>₹12000</td>
+
+</tr>
+
+<tr>
+
+<td>#1003</td>
+<td>Amit</td>
+<td class="success">Completed</td>
+<td>₹8000</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<!-- PROFILE -->
+
+<div class="profile-card">
+
+<img src="https://i.pravatar.cc/150?img=12">
+
+<h2>Admin User</h2>
+
+<p>Full Stack Developer</p>
+
+</div>
+
+</div>
+
+<script src="/js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Ecommerce</title>
+
+<link rel="stylesheet"
+href="/css/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<%- include("partials/navbar") %>
+
+<section class="hero">
+
+<h1>
+
+Premium Ecommerce Store
+
+</h1>
+
+<p>
+
+Modern Shopping Experience
+
+</p>
+
+</section>
+
+<div class="products">
+
+<% products.forEach(product=>{ %>
+
+<div class="product-card">
+
+<img src="<%= product.image %>">
+
+<h2><%= product.name %></h2>
+
+<p class="price">
+
+₹<%= product.price %>
+
+</p>
+
+<p>
+
+⭐ <%= product.rating %>
+(<%= product.reviews %> Reviews)
+
+</p>
+
+<div class="buttons">
+
+<a href="/product/<%= product.id %>">
+
+<button>
+
+View Product
+
+</button>
+
+</a>
+
+<a href="/add/<%= product.id %>">
+
+<button>
+
+Add To Cart
+
+</button>
+
+</a>
+
+<a href="/wishlist/add/<%= product.id %>">
+
+<button>
+
+♡ Wishlist
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+<% }) %>
+
+</div>
+
+</body>
+</html>

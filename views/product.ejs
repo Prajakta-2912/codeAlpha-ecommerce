@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+<div class="product-page">
+
+<!-- LEFT -->
+
+<div class="product-image-section">
+
+<div class="discount-badge">
+30% OFF
+</div>
+
+<img 
+id="mainImage"
+src="<%= product.image %>"
+class="main-product-image"
+>
+
+<div class="small-images">
+
+<img 
+src="<%= product.image %>"
+onclick="changeImage(this)"
+>
+
+<img 
+src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1000"
+onclick="changeImage(this)"
+>
+
+<img 
+src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1000"
+onclick="changeImage(this)"
+>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="product-details">
+
+<h1><%= product.name %></h1>
+
+<p class="price"><%= product.price %></p>
+
+<div class="rating">
+⭐⭐⭐⭐⭐ 4.8/5 Ratings
+</div>
+
+<p>
+<%= product.description %>
+</p>
+
+<p class="delivery">
+🚚 Delivery by Tomorrow
+</p>
+
+<p class="stock in-stock">
+✅ In Stock
+</p>
+
+<!-- QUANTITY -->
+
+<div class="quantity-box">
+
+<button onclick="decreaseQty()">-</button>
+
+<input 
+type="number" 
+value="1" 
+id="qty"
+>
+
+<button onclick="increaseQty()">+</button>
+
+</div>
+
+<!-- BUTTONS -->
+
+<div class="product-buttons">
+
+<button class="add-cart">
+🛒 Add To Cart
+</button>
+
+<button class="wishlist-btn">
+❤️ Wishlist
+</button>
+
+<button class="buy-btn" onclick="goPayment()">
+💳 Buy Now
+</button>
+
+</div>
+
+<!-- SPECIFICATIONS -->
+
+<div class="specs">
+
+<h2>Specifications</h2>
+
+<ul>
+
+<li>16GB RAM</li>
+
+<li>512GB SSD</li>
+
+<li>RTX Graphics</li>
+
+<li>144Hz Display</li>
+
+<li>RGB Keyboard</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TABS -->
+
+<div class="tabs-section">
+
+<div class="tabs">
+
+<button onclick="showTab('desc')">
+Description
+</button>
+
+<button onclick="showTab('reviews')">
+Reviews
+</button>
+
+<button onclick="showTab('specs')">
+Specifications
+</button>
+
+</div>
+
+<div class="tab-content" id="desc">
+
+<h2>Description</h2>
+
+<p>
+This is a premium gaming laptop designed for
+high-end gaming and productivity.
+</p>
+
+</div>
+
+<div 
+class="tab-content"
+id="reviews"
+style="display:none;"
+>
+
+<h2>Customer Reviews</h2>
+
+<div class="review-card">
+
+<h3>⭐⭐⭐⭐⭐ Rahul Sharma</h3>
+
+<p>
+Amazing performance and battery life.
+</p>
+
+</div>
+
+<div class="review-card">
+
+<h3>⭐⭐⭐⭐⭐ Priya Verma</h3>
+
+<p>
+Very premium quality product.
+</p>
+
+</div>
+
+</div>
+
+<div 
+class="tab-content"
+id="specs"
+style="display:none;"
+>
+
+<h2>Technical Specs</h2>
+
+<ul>
+
+<li>Processor: Intel i7</li>
+
+<li>RAM: 16GB</li>
+
+<li>Storage: 512GB SSD</li>
+
+<li>GPU: RTX 4060</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<!-- RELATED PRODUCTS -->
+
+<div class="related-section">
+
+<h1>Related Products</h1>
+
+<div class="products">
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1000">
+
+<h2>iPhone 15</h2>
+
+<p class="price">₹80,000</p>
+
+<button>
+View Product
+</button>
+
+</div>
+
+<div class="product-card">
+
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1000">
+
+<h2>Headphones</h2>
+
+<p class="price">₹5,000</p>
+
+<button>
+View Product
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+
+function changeImage(element){
+
+document.getElementById("mainImage").src =
+element.src;
+
+}
+
+function increaseQty(){
+
+let qty =
+document.getElementById("qty");
+
+qty.value =
+parseInt(qty.value)+1;
+
+}
+
+function decreaseQty(){
+
+let qty =
+document.getElementById("qty");
+
+if(qty.value > 1){
+
+qty.value =
+parseInt(qty.value)-1;
+
+}
+
+}
+
+function goPayment(){
+
+window.location.href="/payment";
+
+}
+
+function showTab(tabId){
+
+document.querySelectorAll(".tab-content")
+.forEach(tab=>{
+
+tab.style.display="none";
+
+});
+
+document.getElementById(tabId)
+.style.display="block";
+
+}
+
+</script>
+
+<script src="/js/dashboard.js"></script>
+
+</body>
+</html>

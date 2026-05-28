@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link rel="stylesheet"
+href="/css/style.css">
+
+</head>
+
+<body>
+
+<%- include("partials/navbar") %>
+
+<h1 class="title">
+
+Wishlist
+
+</h1>
+
+<div class="products">
+
+<% wishlistProducts.forEach(product=>{ %>
+
+<div class="product-card">
+
+<img src="<%= product.image %>">
+
+<h2><%= product.name %></h2>
+
+<p>
+
+₹<%= product.price %>
+
+</p>
+
+</div>
+
+<% }) %>
+
+</div>
+
+</body>
+</html>
